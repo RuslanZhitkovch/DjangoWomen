@@ -5,8 +5,10 @@ from django.urls import path, include
 from website import settings
 from .views import *
 
+
 urlpatterns = [
-    path('', index),
+    path('', index, name = 'home'),
+    path('about/',about,name='about'),
     path('cats/<int:catid>/', categories),
 
 ]
