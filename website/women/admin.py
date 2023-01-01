@@ -6,11 +6,13 @@ class WomenAdmin(admin.ModelAdmin):           # для отображения б
     list_display = ('id', 'title', 'time_create', 'photo', 'is_published')
     list_display_links = ('id', 'title')
     search_fields = ('title', 'content')
+    prepopulated_fields = {"slug": ("title",)}
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('id', 'name')
     list_display_links = ('id', 'name')
     search_fields = ('name',)      # запятая нужна для того чтобы показать что это кортеж
+    prepopulated_fields = {"slug": ("name",)}
 
 
 
